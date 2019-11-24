@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Data.Interface;
+using Data.Repository;
 using DataBase;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,6 +30,7 @@ namespace POS
             services.AddDbContext<POSDbContext>(o => o.UseSqlServer(config.GetConnectionString("constrg"), x => x.MigrationsAssembly("DataBase")));
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddTransient<IVendorRepository, VendorRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
