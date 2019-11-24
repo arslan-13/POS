@@ -34,6 +34,8 @@ namespace POS.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Add(Vendor vendor)
         {
             if (ModelState.IsValid)
@@ -45,6 +47,42 @@ namespace POS.Controllers
             return View(vendor);
         }
         #endregion
+
+        #region Edit
+        public async Task<IActionResult> Edit(int ID)
+        {
+            var vendor = await vendorRepo.GetVendorByID(ID);
+            return View(vendor);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(Vendor vendor)
+        {
+            vendorRepo.Edit(vendor);
+            await vendorRepo.Save();
+            return RedirectToAction(nameof(Index));
+        }
+        #endregion
+
+        #region Delete
+        public async Task<IActionResult> Delete(int ID)
+        {
+            var ven = await vendorRepo.GetVendorByID(ID);
+            return View(ven);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public async Task<IActionResult> DeleteConf(int ID)
+        {
+            var ven = await vendorRepo.GetVendorByID(ID);
+            vendorRepo.Delete(ven);
+            await vendorRepo.Save();
+            return RedirectToAction(nameof(Index));
+        }
+        #endregion
+
 
     }
 }

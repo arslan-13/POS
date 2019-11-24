@@ -29,6 +29,8 @@ namespace DataBase
             {
                 x.HasKey(z => z.ID);
                 x.Property(z => z.CompanyName).IsRequired();
+                x.Property(z => z.Email).IsRequired();
+                x.Property(z => z.Address).IsRequired();
             });
 
             modelBuilder.Entity<Product>(x =>

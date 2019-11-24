@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Vendor>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="my-3">
+                <a class="btn btn-success btn-lg btn-block" asp-action="Add">Add Vendor</a>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <table class="table table-hover table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>@item.CompanyName</td>
+                        <td>@item.Email</td>
+                        <td>@item.Address</td>
+                        <td class="btn-group">
+                            @*<a asp-action="Detail" asp-route-ID="@item.ID" class="btn btn-info">Details</a>*@
+                            <a asp-action="Edit" asp-route-ID="@item.ID" class="btn btn-warning">Edit</a>
+                            <a asp-action="Delete" asp-route-ID="@item.ID" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
