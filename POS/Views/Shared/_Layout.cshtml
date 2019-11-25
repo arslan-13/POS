@@ -42,31 +42,31 @@
 
             <!-- Nav Item - Vendor Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStudent" aria-expanded="true" aria-controls="collapseStudent">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVendor" aria-expanded="true" aria-controls="collapseVendor">
                     <i class="fas fa-shipping-fast"></i>
                     <span>Vendor</span>
                 </a>
-                <div id="collapseStudent" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                <div id="collapseVendor" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Student Menu</h6>
+                        <h6 class="collapse-header">Vendor Menu</h6>
                         <a class="collapse-item" asp-controller="Vendor" asp-action="Add">Create Vendor</a>
                         <a class="collapse-item" asp-controller="Vendor" asp-action="Index">Vendor List</a>
                     </div>
                 </div>
             </li>
 
-            <!-- Nav Item - Subject Collapse Menu -->
+            <!-- Nav Item - Purchased Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSubject" aria-expanded="true" aria-controls="collapseSubject">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePurchased" aria-expanded="true" aria-controls="collapsePurchased">
                     <i class="fas fa-shopping-cart"></i>
-                    <span>Category & Product</span>
+                    <span>Purchased</span>
                 </a>
-                <div id="collapseSubject" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                <div id="collapsePurchased" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" asp-controller="Subject" asp-action="Create">Add Subject</a>
-                        <a class="collapse-item" asp-controller="Subject" asp-action="Index">Subject List</a>
-                        @*<a class="collapse-item" asp-controller="Subject" asp-action="AssingSubjectToTeacher">Assign Subject</a>*@
+                        <h6 class="collapse-header">Purchased Menu:</h6>
+                        <a class="collapse-item" asp-controller="Category" asp-action="Add">Add Category</a>
+                        <a class="collapse-item" asp-controller="Category" asp-action="Index">Category List</a>
+                        <a class="collapse-item" asp-controller="Purchased" asp-action="PurchasedOrder">New Purchased Order</a>
 
                     </div>
                 </div>

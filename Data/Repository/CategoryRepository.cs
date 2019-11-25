@@ -38,7 +38,7 @@ namespace Data.Repository
             return await cntx.tblcategories.ToListAsync();
         }
 
-        public async Task<Category> GetVendorByID(int ID)
+        public async Task<Category> GetCategoryByID(int ID)
         {
             return await cntx.tblcategories.FindAsync(ID);
         }

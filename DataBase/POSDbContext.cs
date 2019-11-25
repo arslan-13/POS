@@ -16,6 +16,7 @@ namespace DataBase
         public DbSet<Category> tblcategories { get; set; }
         public DbSet<Product> tblproducts { get; set; }
         public DbSet<Vendor> tblvendors { get; set; }
+        public DbSet<PurchasedOrder> tblpurchasedOrders { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -42,6 +43,13 @@ namespace DataBase
                 x.Property(z => z.Description).IsRequired();
                 x.HasOne(z => z.Vendor).WithMany(z => z.products).HasForeignKey(z => z.VendorID);
                 x.HasOne(z => z.Category).WithMany(z => z.products).HasForeignKey(z => z.CategoryID);
+                x.HasOne(z => z.PurchasedOrder).WithMany(z => z.Product).HasForeignKey(z => z.PurchasedOrderID);
+            });
+
+            modelBuilder.Entity<PurchasedOrder>(x =>
+            {
+                x.HasKey(z => z.POID);
+
             });
         }
     }

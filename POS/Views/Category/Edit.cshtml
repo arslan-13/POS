@@ -1,0 +1,34 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h5>Edit Category</h5>
+        </div>
+        <form asp-action="Edit" method="post">
+            <div class="card-body">
+                <input type="hidden" asp-for="ID" />
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="submit" name="submit" value="Update" class="btn btn-success btn-block" />
+                    </div>
+                    <div class="col-md-6">
+                        <a asp-action="Index" class="btn btn-block btn-danger">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

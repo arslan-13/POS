@@ -9,7 +9,7 @@ namespace Data.Interface
     public interface ICategoryRepository
     {
         Task<IEnumerable<Category>> GetAllCategory();
-        Task<Category> GetVendorByID(int ID);
+        Task<Category> GetCategoryByID(int ID);
 
         void Add(Category category);
         void Edit(Category category);
