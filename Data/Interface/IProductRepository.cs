@@ -10,7 +10,8 @@ namespace Data.Interface
     {
         Task<IEnumerable<Product>> GetAllProduct();
         Task<Product> GetProductByID(int ID);
-
+        Task<IEnumerable<Product>> GetProductWithCategory();
+        Task<IEnumerable<Product>> GetProductWithCategoryAndVendor();
         void Add(Product product);
         void Edit(Product product);
         void Delete(Product product);

@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Report";
+}
+
+<div class="container">
+
+    <div class="col-md-12" style="margin:auto;">
+        <table class="table table-hover table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ID</td>
+                        <th>@item.Name</th>
+                        <th>@item.Category.Name</th>
+                        <th>@item.Price</th>
+                        <th>@item.Quantity</th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

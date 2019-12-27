@@ -1,0 +1,63 @@
+﻿@model AddProductViewModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h5>Edit Product in Stock</h5>
+        </div>
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="product.ID" />
+            <div class="card-body">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            @Html.DropDownListFor(x => x.product.VendorID,
+    new SelectList(Model.vendors.Select(x => new { Value = x.ID, Text = x.CompanyName }), "Value", "Text"),
+    "Select Vendor", htmlAttributes: new { @class = "form-control border-input" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.DropDownListFor(x => x.product.CategoryID,
+    new SelectList(Model.categories.Select(x => new { Value = x.ID, Text = x.Name }), "Value", "Text"),
+    "Select Category", htmlAttributes: new { @class = "form-control border-input" })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="product.Name" class="control-label"></label>
+                    <input asp-for="product.Name" class="form-control" />
+                    <span asp-validation-for="product.Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="product.Description" class="control-label"></label>
+                    <input asp-for="product.Description" class="form-control" />
+                    <span asp-validation-for="product.Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="product.Quantity" class="control-label"></label>
+                    <input asp-for="product.Quantity" class="form-control" />
+                    <span asp-validation-for="product.Quantity" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="product.Price" class="control-label"></label>
+                    <input asp-for="product.Price" class="form-control" />
+                    <span asp-validation-for="product.Price" class="text-danger"></span>
+                </div>
+
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="submit" name="submit" value="Edit" class="btn btn-success btn-block" />
+                    </div>
+                    <div class="col-md-6">
+                        <a asp-action="Index" class="btn btn-block btn-danger">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

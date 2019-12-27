@@ -45,6 +45,42 @@
                 Main Menu
             </div>
 
+
+
+            <!-- Nav Item - Purchased Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePurchased" aria-expanded="true" aria-controls="collapsePurchased">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Purchased</span>
+                </a>
+                <div id="collapsePurchased" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Purchased Menu:</h6>
+                        <a class="collapse-item" asp-controller="Purchased" asp-action="PurchasedOrder">New Purchased Order</a>
+
+                    </div>
+                </div>
+            </li>
+            <!-- Nav Item - Subject Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInventory" aria-expanded="true" aria-controls="collapseInventory">
+                    <i class="fas fa-receipt"></i>
+                    <span>Inventory</span>
+                </a>
+                <div id="collapseInventory" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Inventory and stock:</h6>
+                        <a class="collapse-item" asp-controller="Product" asp-action="Add">Add New Product</a>
+                        <a class="collapse-item" asp-controller="Product" asp-action="Index">Check Stock</a>
+                    </div>
+                </div>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Sub Menu
+            </div>
             <!-- Nav Item - Vendor Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVendor" aria-expanded="true" aria-controls="collapseVendor">
@@ -59,67 +95,18 @@
                     </div>
                 </div>
             </li>
-
-            <!-- Nav Item - Purchased Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePurchased" aria-expanded="true" aria-controls="collapsePurchased">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>Purchased</span>
-                </a>
-                <div id="collapsePurchased" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Purchased Menu:</h6>
-                        <a class="collapse-item" asp-controller="Category" asp-action="Add">Add Category</a>
-                        <a class="collapse-item" asp-controller="Category" asp-action="Index">Category List</a>
-                        <a class="collapse-item" asp-controller="Purchased" asp-action="PurchasedOrder">New Purchased Order</a>
-
-                    </div>
-                </div>
-            </li>
-            <!-- Nav Item - Subject Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSubject" aria-expanded="true" aria-controls="collapseSubject">
-                    <i class="fas fa-receipt"></i>
-                    <span>Invoice</span>
-                </a>
-                <div id="collapseSubject" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" asp-controller="Subject" asp-action="Create">Add Subject</a>
-                        <a class="collapse-item" asp-controller="Subject" asp-action="Index">Subject List</a>
-                        @*<a class="collapse-item" asp-controller="Subject" asp-action="AssingSubjectToTeacher">Assign Subject</a>*@
-
-                    </div>
-                </div>
-            </li>
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Student Profile
-            </div>
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <!--  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCategory" aria-expanded="true" aria-controls="collapseCategory">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a> -->
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Enrollment</span>
+                    <span>Category</span>
                 </a>
-                <!--  <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div id="collapseCategory" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <a class="collapse-item" asp-controller="Category" asp-action="Add">Add Category</a>
+                        <a class="collapse-item" asp-controller="Category" asp-action="Index">Category List</a>
                     </div>
-                </div> -->
+                </div>
             </li>
             <!-- Nav Item - Charts -->
             <!--   <li class="nav-item">
@@ -320,8 +307,6 @@
                 <!-- End of Topbar -->
                 <div class="container-fluid">
                     @RenderBody()
-
-
                 </div>
             </div>
             <!-- Scroll to Top Button-->
@@ -359,6 +344,7 @@
         </div>
     </div>
 
+    @RenderSection("Scripts", required: false)
     <!-- Bootstrap core JavaScript-->
 
     <script src="~/vendor/jquery/jquery.js"></script>

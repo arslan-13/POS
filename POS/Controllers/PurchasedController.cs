@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Data.Interface;
+﻿using Data.Interface;
 using Microsoft.AspNetCore.Mvc;
+using Models;
 using POS.ViewModels;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
 
 namespace POS.Controllers
 {
     public class PurchasedController : Controller
     {
 
-        #region Private variable & Contruction
+        #region Private variable & Constructor
         private readonly IProductRepository proRepo;
         private readonly ICategoryRepository cateRepo;
         private readonly IVendorRepository venRepo;
@@ -40,13 +40,24 @@ namespace POS.Controllers
             {
                 new PurchasedOrderViewModel
                 {
-                    categories=await cateRepo.GetAllCategory(),
-                    vendor=await venRepo.GetAllVendors()
+                    categories=await cateRepo.GetAllCategory()
                 }
             };
+
             return View(PO);
         }
-
+        public async Task<JsonResult> getvondrer()
+        {
+            IEnumerable<Vendor> vendor = await venRepo.GetAllVendors();
+            //List<Vendor> vendors = new List<Vendor>
+            //{
+            //    new Vendor
+            //    {
+            //        categories=await cateRepo.GetAllCategory()
+            //    }
+            //};
+            return Json(vendor);
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult PurchasedOrder(int ID)

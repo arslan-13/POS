@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,6 +38,11 @@ namespace Data.Repository
         {
             return await cntx.tblcategories.ToListAsync();
         }
+
+        //public IEnumerable<Category> GetAllCategoryWA()
+        //{
+        //    return cntx.tblcategories.ToList();
+        //}
 
         public async Task<Category> GetCategoryByID(int ID)
         {

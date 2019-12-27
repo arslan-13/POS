@@ -6,9 +6,18 @@
 
   <ItemGroup>
     <Compile Remove="Database\**" />
+    <Compile Remove="Views\Shared\Components\**" />
     <Content Remove="Database\**" />
+    <Content Remove="Views\Shared\Components\**" />
     <EmbeddedResource Remove="Database\**" />
+    <EmbeddedResource Remove="Views\Shared\Components\**" />
     <None Remove="Database\**" />
+    <None Remove="Views\Shared\Components\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="ViewModels\OrderViewModel.cs" />
+    <Compile Remove="ViewModels\VendorDropdown.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +29,9 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
+    <PackageReference Include="Rotativa.AspNetCore" Version="1.1.1" />
+    <PackageReference Include="Syncfusion.EJ.ReportDesigner.AspNet.Core" Version="17.3.0.30" />
+    <PackageReference Include="Syncfusion.EJ.ReportViewer.AspNet.Core" Version="17.3.0.30" />
   </ItemGroup>
 
   <ItemGroup>

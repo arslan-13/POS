@@ -6,15 +6,9 @@ using System.Threading.Tasks;
 
 namespace POS.ViewModels
 {
-    public class OrderViewModel
+    public class VendorDropdown
     {
-
-        public OrderViewModel()
-        {
-
-        }
-        public List<PurchasedOrderViewModel> purchasedorderViewModel { get; set; }
-
         public IEnumerable<Vendor> vendor { get; set; }
+        public int VendorFK { get; set; }
     }
 }

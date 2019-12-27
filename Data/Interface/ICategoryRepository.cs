@@ -8,6 +8,7 @@ namespace Data.Interface
 {
     public interface ICategoryRepository
     {
+        //IEnumerable<Category> GetAllCategoryWA();
         Task<IEnumerable<Category>> GetAllCategory();
         Task<Category> GetCategoryByID(int ID);
 

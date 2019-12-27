@@ -83,6 +83,9 @@ namespace DataBase.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("OrderTime")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("POID");
 
                     b.ToTable("tblpurchasedOrders");

@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using Data.Interface;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,13 @@ namespace POS.ViewModels
 {
     public class PurchasedOrderViewModel
     {
-        public IEnumerable<Vendor> vendor { get; set; }
-        public int VendorFK { get; set; }
+        //private readonly ICategoryRepository cateRepo;
+        //public PurchasedOrderViewModel(ICategoryRepository categoryRepository)
+        //{
+        //    cateRepo = categoryRepository;
+        //}
 
+        //public IEnumerable<Vendor> vendor { get; set; }
         public IEnumerable<Category> categories { get; set; }
 
         public Product product { get; set; }

@@ -49,5 +49,15 @@ namespace Data.Repository
         {
             await cntx.SaveChangesAsync();
         }
+
+        public async Task<IEnumerable<Product>> GetProductWithCategory()
+        {
+            return await cntx.tblproducts.Include(x => x.Category).ToListAsync();
+        }
+
+        public async Task<IEnumerable<Product>> GetProductWithCategoryAndVendor()
+        {
+            return await cntx.tblproducts.Include(x => x.Category).Include(x => x.Vendor).ToListAsync();
+        }
     }
 }
